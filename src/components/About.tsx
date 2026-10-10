@@ -1,45 +1,4 @@
 import { motion } from 'framer-motion';
-import { Award, BookOpen, Briefcase, FileCode2 } from 'lucide-react';
-
-const services = [
-  { label: 'Data', value: 'Analysis', icon: FileCode2 },
-  { label: 'Hardware', value: 'Troubleshoot', icon: Award },
-  { label: 'Web', value: 'Development', icon: BookOpen },
-  { label: 'Technical', value: 'Consulting', icon: Briefcase },
-];
-
-const timeline = [
-  {
-    title: 'FPGA Automated Control System',
-    org: 'Hardware & Instrumentation',
-    date: 'Experience',
-    desc: 'Designed state machine architecture and sensor signal conditioning for a smart water control system using ZYNQ-7000 FPGA.'
-  },
-  {
-    title: 'Data Science & Computational Visualization',
-    org: 'Physics & Code',
-    date: 'Project',
-    desc: 'Utilized Python (Matplotlib & NumPy) to visualize mathematical interval solutions, Fourier series, and wave sampling graph analysis.'
-  },
-  {
-    title: 'Front-End Web Development',
-    org: 'Software Development',
-    date: 'Project',
-    desc: 'Designed and deployed responsive, interactive single-file web applications featuring keyframe animations and audio integration.'
-  },
-  {
-    title: 'Hardware Diagnostics & Mechanical Analysis',
-    org: 'Troubleshooting',
-    date: 'Experience',
-    desc: 'Performed advanced hardware troubleshooting (iOS panic log analysis) and mechanical calculations for vehicle engine bore-up.'
-  },
-  {
-    title: 'Mentor Pilar UI 2026',
-    org: 'Universitas Indonesia',
-    date: 'Leadership',
-    desc: 'Led, organized, and managed new students (Group 185) during orientation, ensuring effective communication and program success.'
-  }
-];
 
 const About = () => {
   return (
@@ -49,93 +8,64 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-16 text-center lg:text-left"
       >
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          About <span className="text-cyan-400">Me</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          About <span className="text-accent-cyan text-glow">Me</span>
         </h2>
-        <div className="w-24 h-1 bg-cyan-400 rounded-full"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-blue rounded-full mx-auto lg:mx-0"></div>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left: Image & Stats */}
-        <div className="flex flex-col gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Left: High-tech 3D Avatar/Image */}
+        <div className="lg:col-span-5 flex justify-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative w-full max-w-sm mx-auto aspect-square rounded-2xl overflow-hidden group border border-white/10"
+            className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden group border border-white/10 glass shadow-[0_0_40px_rgba(34,211,238,0.15)]"
           >
             {/* Hover Effects */}
-            <div className="absolute inset-0 bg-cyan-500/20 group-hover:bg-transparent transition-colors z-10 duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-accent-cyan/20 group-hover:bg-transparent transition-colors z-10 duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent z-10" />
+            
+            {/* Tech overlays */}
+            <div className="absolute top-4 left-4 z-20 font-mono text-[10px] text-accent-cyan opacity-70">
+              [ SYS.INIT // 2406356012 ]
+            </div>
+            <div className="absolute bottom-4 right-4 z-20 font-mono text-[10px] text-accent-gold opacity-70">
+              TARGET ACQUIRED: GLOBAL IMPACT
+            </div>
+            
             <img 
-              src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=800&auto=format&fit=crop" 
-              alt="Profile" 
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" 
+              alt="High-Tech Avatar" 
               className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
             />
           </motion.div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {services.map((service, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="glass p-4 rounded-xl flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-colors"
-              >
-                <service.icon className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform" size={24} />
-                <span className="text-xl font-bold text-white mb-1">{service.value}</span>
-                <span className="text-[10px] uppercase tracking-wider text-slate-400">{service.label}</span>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
-        {/* Right: Bio & Timeline */}
-        <div className="flex flex-col gap-8">
+        {/* Right: Text Description */}
+        <div className="lg:col-span-7 flex flex-col gap-6">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden"
           >
-            <p className="text-slate-300 leading-relaxed text-lg mb-6">
-              I am an Undergraduate Physics Student at Universitas Indonesia (NPM 2406356012) majoring in Instrumentation Physics. I have a deep interest in solving complex problems at the intersection of pure science, information technology, and business/economic analysis. I am accustomed to decomposing systemic problems—from mathematical equations to hardware architecture—to deliver efficient, scalable, and impactful solutions.
+            {/* Decorative element */}
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl" />
+            
+            <p className="text-slate-300 leading-relaxed text-lg md:text-xl text-justify relative z-10 font-sans">
+              Saya adalah mahasiswa S1 Fisika Universitas Indonesia (NPM 2406356012) dengan peminatan Fisika Instrumentasi, sekaligus polymath yang mendedikasikan diri pada persilangan antara sains murni, rekayasa teknologi tingkat tinggi, dan pasar keuangan makro.
+              <br/><br/>
+              Dengan rekam jejak multidisipliner yang merentang dari analisis struktur kristal dan komputasi kuantum, arsitektur sistem tertanam (embedded systems), pengembangan perangkat lunak berbasis AI dan Web3, hingga manajemen portofolio investasi global sejak 2020.
+              <br/><br/>
+              Saya membangun solusi dari level abstraksi terendah—seperti desain mikrokontroler dan persamaan matematis—hingga infrastruktur digital dan strategi bisnis skala enterprise.
             </p>
           </motion.div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="text-xl font-bold flex items-center gap-2">
-              <Briefcase className="text-cyan-400" size={20} />
-              Experience & Projects
-            </h3>
-            
-            <div className="flex flex-col gap-4 relative">
-              <div className="absolute left-4 top-2 bottom-2 w-px bg-slate-800" />
-              {timeline.map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.2 }}
-                  className="relative pl-12"
-                >
-                  <div className="absolute left-3 top-2 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
-                  <div className="glass p-5 rounded-xl hover:bg-white/10 transition-colors">
-                    <span className="text-xs font-mono text-cyan-400 mb-2 block">{item.date}</span>
-                    <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
-                    <span className="text-sm text-slate-400 mb-3 block">{item.org}</span>
-                    <p className="text-sm text-slate-300">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

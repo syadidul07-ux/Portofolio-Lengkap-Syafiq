@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,12 +31,15 @@ function App() {
           <Background />
           <Navbar />
           
-          <main className="relative z-10 flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-4 md:px-8">
+          <main className="relative z-10 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 md:px-8">
             <Hero />
             <About />
             <Portfolio />
             <Contact />
           </main>
+          
+          {/* Floating Music Player */}
+          <MusicPlayer />
         </div>
       )}
     </>
