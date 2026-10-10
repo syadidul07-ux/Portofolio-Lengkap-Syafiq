@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Atom, TrendingUp, Code2, Cpu, LineChart } from 'lucide-react';
+import { Atom, TrendingUp, Code2, Cpu, LineChart } from 'lucide-react';
 
 const categories = ['Skills Matrix', 'Global Experience'];
 
