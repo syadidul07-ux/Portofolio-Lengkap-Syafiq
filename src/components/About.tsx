@@ -39,9 +39,9 @@ const About = () => {
             </div>
             
             <img 
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" 
-              alt="High-Tech Avatar" 
-              className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              src="/Photo.jpeg" 
+              alt="Syafiq Syadidul Azmi" 
+              className="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-105"
             />
           </motion.div>
         </div>
