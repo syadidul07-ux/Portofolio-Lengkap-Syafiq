@@ -2,29 +2,23 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
-const categories = ['Projects', 'Certificates', 'Awards', 'Tech Stack'];
+const categories = ['Skills', 'Projects'];
 
 const projects = [
-  { id: 1, title: 'E-Commerce Platform', category: 'Projects', img: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop', desc: 'A full-stack e-commerce solution with cart and checkout.', tech: ['Next.js', 'Tailwind', 'Supabase'] },
-  { id: 2, title: 'Task Manager', category: 'Projects', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop', desc: 'Kanban style task management tool.', tech: ['React', 'Framer Motion', 'Firebase'] },
-  { id: 3, title: 'AI Image Generator', category: 'Projects', img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop', desc: 'Generate images using OpenAI API.', tech: ['Vite', 'Node.js', 'OpenAI'] },
+  { id: 1, title: 'FPGA Automated Control System', category: 'Projects', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop', desc: 'Designed state machine architecture and sensor signal conditioning for a smart water control system using ZYNQ-7000 FPGA and advanced data processing pipelines.', tech: ['FPGA', 'ZYNQ-7000', 'State Machine', 'Signal Conditioning'] },
+  { id: 2, title: 'Data Science & Visualizations', category: 'Projects', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', desc: 'Utilized Python to visualize mathematical interval solutions, Fourier series, and wave sampling graph analysis of complex physics equations.', tech: ['Python', 'NumPy', 'Matplotlib', 'Data Science'] },
+  { id: 3, title: 'Front-End Web Development', category: 'Projects', img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop', desc: 'Designed and deployed responsive, interactive single-file web applications featuring keyframe animations, photo galleries, and audio integration.', tech: ['HTML/CSS/JS', 'Glassmorphism', 'Animations'] },
 ];
 
-const techStack = [
-  { name: 'HTML5', icon: '🌐' },
-  { name: 'CSS3', icon: '🎨' },
-  { name: 'JavaScript', icon: '⚡' },
-  { name: 'TypeScript', icon: '📘' },
-  { name: 'React', icon: '⚛️' },
-  { name: 'Next.js', icon: '▲' },
-  { name: 'Tailwind CSS', icon: '🌊' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'Supabase', icon: '⚡' },
-  { name: 'Figma', icon: '🎨' },
+const skills = [
+  { category: 'Coding & Software', items: 'Python (NumPy, Matplotlib), Front-End Web Development (HTML, CSS, JS, Glassmorphism UI, CSS Animations), LaTeX for advanced technical writing.' },
+  { category: 'Hardware & Instrumentation Physics', items: 'FPGA ZYNQ-7000, Data Acquisition Systems (DAQ), Sensor Signal Conditioning, State Machine Design, Hardware Diagnostics (iOS Panic Log Analysis).' },
+  { category: 'Physics & Mathematics', items: 'Solid State Physics (Crystal Lattice Structure, Bragg\'s Law), Electrodynamics, Mathematical Physics, Vector Calculus, Laplace Equations, Digital Signal Analysis & Sampling.' },
+  { category: 'Business, Economics & Management', items: 'Data-Driven Decision Making, Technical Feasibility Analysis for Projects, System Efficiency Modeling, Strategic Leadership.' }
 ];
 
 const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState('Projects');
+  const [activeTab, setActiveTab] = useState('Skills');
 
   return (
     <section id="portfolio" className="min-h-screen w-full py-24 flex flex-col">
@@ -100,36 +94,22 @@ const Portfolio = () => {
             </motion.div>
           )}
 
-          {/* Tech Stack View */}
-          {activeTab === 'Tech Stack' && (
+          {/* Skills View */}
+          {activeTab === 'Skills' && (
             <motion.div
-              key="tech"
+              key="skills"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
-              {techStack.map(tech => (
-                <div key={tech.name} className="glass aspect-square rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 hover:border-cyan-500/30 transition-all group">
-                  <span className="text-4xl group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-300">{tech.icon}</span>
-                  <span className="font-medium text-slate-300 group-hover:text-cyan-400 transition-colors">{tech.name}</span>
+              {skills.map((skill, idx) => (
+                <div key={idx} className="glass p-6 rounded-2xl flex flex-col gap-3 hover:bg-white/10 transition-colors">
+                  <h3 className="text-xl font-bold text-cyan-400">{skill.category}</h3>
+                  <p className="text-slate-300 leading-relaxed">{skill.items}</p>
                 </div>
               ))}
-            </motion.div>
-          )}
-
-          {/* Placeholder for Certificates and Awards */}
-          {(activeTab === 'Certificates' || activeTab === 'Awards') && (
-            <motion.div
-              key="placeholder"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="w-full h-64 flex flex-col items-center justify-center text-slate-500 glass rounded-2xl border-dashed"
-            >
-              <Award size={48} className="mb-4 opacity-50" />
-              <p>No {activeTab.toLowerCase()} to display yet.</p>
             </motion.div>
           )}
         </AnimatePresence>

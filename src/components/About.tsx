@@ -1,26 +1,43 @@
 import { motion } from 'framer-motion';
 import { Award, BookOpen, Briefcase, FileCode2 } from 'lucide-react';
 
-const stats = [
-  { label: 'Total Projects', value: '24+', icon: FileCode2 },
-  { label: 'Certificates', value: '10', icon: Award },
-  { label: 'Years Exp.', value: '3+', icon: Briefcase },
+const services = [
+  { label: 'Data', value: 'Analysis', icon: FileCode2 },
+  { label: 'Hardware', value: 'Troubleshoot', icon: Award },
+  { label: 'Web', value: 'Development', icon: BookOpen },
+  { label: 'Technical', value: 'Consulting', icon: Briefcase },
 ];
 
 const timeline = [
   {
-    type: 'Experience',
-    title: 'Frontend Developer',
-    org: 'Tech Innovators Inc.',
-    date: '2023 - Present',
-    desc: 'Building responsive web applications using React and Next.js.'
+    title: 'FPGA Automated Control System',
+    org: 'Hardware & Instrumentation',
+    date: 'Experience',
+    desc: 'Designed state machine architecture and sensor signal conditioning for a smart water control system using ZYNQ-7000 FPGA.'
   },
   {
-    type: 'Education',
-    title: 'Bachelor of Computer Science',
-    org: 'University of Technology',
-    date: '2019 - 2023',
-    desc: 'Graduated with Honors. Focused on Software Engineering.'
+    title: 'Data Science & Computational Visualization',
+    org: 'Physics & Code',
+    date: 'Project',
+    desc: 'Utilized Python (Matplotlib & NumPy) to visualize mathematical interval solutions, Fourier series, and wave sampling graph analysis.'
+  },
+  {
+    title: 'Front-End Web Development',
+    org: 'Software Development',
+    date: 'Project',
+    desc: 'Designed and deployed responsive, interactive single-file web applications featuring keyframe animations and audio integration.'
+  },
+  {
+    title: 'Hardware Diagnostics & Mechanical Analysis',
+    org: 'Troubleshooting',
+    date: 'Experience',
+    desc: 'Performed advanced hardware troubleshooting (iOS panic log analysis) and mechanical calculations for vehicle engine bore-up.'
+  },
+  {
+    title: 'Mentor Pilar UI 2026',
+    org: 'Universitas Indonesia',
+    date: 'Leadership',
+    desc: 'Led, organized, and managed new students (Group 185) during orientation, ensuring effective communication and program success.'
   }
 ];
 
@@ -60,8 +77,8 @@ const About = () => {
             />
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-4">
-            {stats.map((stat, idx) => (
+          <div className="grid grid-cols-2 gap-4">
+            {services.map((service, idx) => (
               <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -70,9 +87,9 @@ const About = () => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="glass p-4 rounded-xl flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-colors"
               >
-                <stat.icon className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform" size={24} />
-                <span className="text-2xl font-bold text-white mb-1">{stat.value}</span>
-                <span className="text-[10px] uppercase tracking-wider text-slate-400">{stat.label}</span>
+                <service.icon className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform" size={24} />
+                <span className="text-xl font-bold text-white mb-1">{service.value}</span>
+                <span className="text-[10px] uppercase tracking-wider text-slate-400">{service.label}</span>
               </motion.div>
             ))}
           </div>
@@ -87,14 +104,14 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-slate-300 leading-relaxed text-lg mb-6">
-              I am a dedicated developer with a strong focus on frontend technologies. I enjoy solving complex problems and turning designs into pixel-perfect, performant code. When I'm not coding, you'll find me exploring new technologies or listening to synthwave music.
+              I am an Undergraduate Physics Student at Universitas Indonesia (NPM 2406356012) majoring in Instrumentation Physics. I have a deep interest in solving complex problems at the intersection of pure science, information technology, and business/economic analysis. I am accustomed to decomposing systemic problems—from mathematical equations to hardware architecture—to deliver efficient, scalable, and impactful solutions.
             </p>
           </motion.div>
 
           <div className="flex flex-col gap-6">
             <h3 className="text-xl font-bold flex items-center gap-2">
-              <BookOpen className="text-cyan-400" size={20} />
-              Journey
+              <Briefcase className="text-cyan-400" size={20} />
+              Experience & Projects
             </h3>
             
             <div className="flex flex-col gap-4 relative">

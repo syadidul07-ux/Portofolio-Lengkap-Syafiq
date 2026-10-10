@@ -13,11 +13,14 @@ const Hero = () => {
         >
           <h2 className="text-cyan-400 font-mono tracking-widest text-sm mb-2">HELLO, WORLD.</h2>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-            Turning Ideas <br />
+            Syafiq <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
-              Into Reality
+              Syadidul Azmi
             </span>
           </h1>
+          <h2 className="text-xl md:text-2xl font-semibold text-slate-300 mt-4">
+            Undergraduate Physics Student at Universitas Indonesia | Instrumentation Physics
+          </h2>
         </motion.div>
 
         <motion.p
@@ -26,7 +29,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-slate-400 text-lg max-w-lg leading-relaxed"
         >
-          I'm a passionate software developer dedicated to crafting modern, interactive, and responsive web experiences. Let's build something amazing together.
+          Bridging Complex Physics, Data-Driven Code, and Strategic Business Solutions.
         </motion.p>
 
         <motion.div
