@@ -2,8 +2,8 @@
 
 Portofolio publik berdasarkan CV Syafiq Syadidul Azmi, dengan acuan visual [portofolio Eka Wahyu](https://ekawahyu-portofolio.vercel.app/).
 
-- Situs: https://syafiq-syadidul-azmi-portfolio.singlecloud16.chatgpt.site
-- Kode: https://github.com/syadidul07-ux/Portofolio-Lengkap-Syafiq/tree/cv-reference
+- Situs Vercel: https://portofolio-lengkap-syafiq.vercel.app
+- Kode: https://github.com/syadidul07-ux/Portofolio-Lengkap-Syafiq
 
 ## Isi
 
@@ -24,6 +24,8 @@ python3 check.py
 ```
 
 Hasil siap hosting ada di `dist/`. Gunakan hosting statis apa pun dengan folder publik `dist` dan perintah build `python3 build.py`. Untuk GitHub Pages, unggah isi `dist/` ke branch publikasi yang dipilih. Semua URL aset relatif agar cocok pada subfolder repository.
+
+`vercel.json` mengatur proyek Vercel sebagai situs statis tanpa framework, dengan build `python3 build.py` dan output `dist`. Push ke branch `main` memicu deployment production melalui integrasi GitHub yang sudah terhubung ke proyek Vercel `portofolio-lengkap-syafiq`.
 
 Ubah profil di `about-section.html`, proyek/kontak di `work-sections.html` dan `dist/sections.js`, lalu jalankan build kembali. Ganti CV di `dist/assets/CV_Syafiq_Syadidul_Azmi.pdf` bila diperlukan.
 
