@@ -12,7 +12,7 @@ Portofolio publik berdasarkan CV Syafiq Syadidul Azmi, dengan acuan visual [port
 - Detail proyek, tab kategori, navigasi kartu, unduh CV, email, dan WhatsApp.
 - Tampilan responsif, navigasi keyboard, dan dukungan `prefers-reduced-motion`.
 
-CV adalah sumber fakta. Ilustrasi proyek dan instrumentasi adalah visual konseptual, bukan foto atau tangkapan layar hasil proyek. Tidak ada IPK, tautan proyek, sertifikat, atau pencapaian tambahan yang dibuat-buat. Tautan GitHub menggunakan akun yang terhubung dan terverifikasi.
+CV adalah sumber fakta. Foto profil berasal dari foto yang disediakan pengguna. Ilustrasi proyek adalah visual konseptual, bukan foto atau tangkapan layar hasil proyek. Tidak ada IPK, tautan proyek, sertifikat, atau pencapaian tambahan yang dibuat-buat. Tautan GitHub menggunakan akun yang terhubung dan terverifikasi.
 
 ## Menjalankan dan memperbarui
 
@@ -31,6 +31,6 @@ Formulir kontak membuka aplikasi email pengunjung melalui `mailto:` dan tidak me
 
 ## Referensi visual dan aset
 
-Desain mengadaptasi struktur, warna, font, navigasi, dan suasana situs contoh yang diberikan pengguna. Aset latar langit, gunung, dan hutan (`img10.svg`, `img20.svg`, `hutan.svg`) berasal dari situs referensi tersebut. Ridge, maskot, ilustrasi instrumentasi, dan diagram proyek disusun sebagai SVG/CSS pada implementasi ini. Foto orang dari referensi tidak digunakan.
+Desain mengadaptasi struktur, warna, font, navigasi, dan suasana situs contoh yang diberikan pengguna. Aset latar langit, gunung, dan hutan (`img10.svg`, `img20.svg`, `hutan.svg`) berasal dari situs referensi tersebut. Ridge, maskot, dan diagram proyek disusun sebagai SVG/CSS pada implementasi ini. Foto orang dari referensi tidak digunakan.
 
 Tampilan mengikuti referensi dengan penyesuaian untuk data CV. Kemiripan pixel 100% belum diverifikasi; teks, ilustrasi, dan isi portofolio disesuaikan. Pemeriksaan yang tersedia meliputi struktur HTML, aset/tautan internal, sintaks JavaScript, isi CV, dan keberhasilan penerbitan. QA browser visual belum tersedia pada lingkungan pengerjaan.
